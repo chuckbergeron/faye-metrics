@@ -1,0 +1,2 @@
+rvm use 2.0.0-p195@faye-metrics --create;
+export PATH=./bin:$PATH
