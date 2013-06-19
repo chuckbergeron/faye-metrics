@@ -1,50 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+    <title></title>
 
-  <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
-  <script type="text/javascript" src="/assets/application.js"></script>
-  <link rel="stylesheet" href="/assets/application.css">
+    <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
+    <!--<script type="text/javascript" src="/javascripts/application.js"></script>-->
+    <link rel="stylesheet" href="/stylesheets/application.css">
 
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/assets/favicon.ico">
+    <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+    
+    <!-- <link rel="icon" href="/assets/favicon.ico"> -->
 
-</head>
+  </head>
   <body>
     <div id="container">
-      <div class="gridster">
-  <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
-    </li>
+      <div class="gridster ready" style="width: 1240px;">
+        <ul style="height: 740px; position: relative;">
+          <li>
+            <div data-id="valuation" data-title="Clients Connected" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
+              <h1 class="title" data-bind="title">Clients Connected</h1>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
+              <h2 class="value"><%= @stats[:clients_connected] %></h2>
+            </div>
+          </li>
+          <br>
+          <li>
+            <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
+              <h1 class="title" data-bind="title">Process ID</h1>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
-    </li>
+              <h2 class="value"><%= @stats[:pid] %></h2>
+            </div>
+          </li>
+          <li>
+            <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
+              <h1 class="title" data-bind="title">Memory Usage</h1>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
-  </ul>
-  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://dashingdemo.herokuapp.com:80/widgets/welcome</div></center>
-</div>
+              <h2 class="value"><%= @stats[:memory] %></h2>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  
-    
   </body>
 </html>

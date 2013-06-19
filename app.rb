@@ -1,8 +1,5 @@
 require 'faye'
 
-set :root, __FILE__
-set :logging, false
-
 App = Faye::RackAdapter.new(Sinatra::Application,
   :mount   => '/bayeux',
   :timeout => 25

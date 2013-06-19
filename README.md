@@ -21,6 +21,6 @@ or
 Credits
 ============
 
-Thanks to [@kalv](http://twitter.com/kalv) and Shopify for their Dashing framework.
+Thanks to [@kalv](http://twitter.com/kalv) ~~WIP: and Shopify for their Dashing framework~~.
 
 Started by Charles Bergeron [@CharlesEllery](http://twitter.com/CharlesEllery) & Kalvir Sandhu. Inspired by [Medeo](https://medeo.ca).
