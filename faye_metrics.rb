@@ -1,5 +1,3 @@
-require 'pry'
-
 class FayeMetrics
 
   attr_reader :faye_rack_adapter
@@ -7,7 +5,9 @@ class FayeMetrics
   def initialize(app, options)
     @app = app
     @stats = {
-      clients_connected: 0
+      clients_connected: 0,
+      pid: store_memory_usage[0],
+      memory: store_memory_usage[1]
     }
 
     @faye_rack_adapter = options[:faye_rack_adapter]
@@ -20,15 +20,10 @@ class FayeMetrics
 
   def call(env)
     request = Rack::Request.new(env)
-    if request.path_info == '/faye/stats'
-      [200, {}, [@stats[:clients_connected]]]
-    else
-      status, header, response = @app.call(env)
-    end
-  end
 
-  def method_name
+    env['stats'] = @stats
 
+    @app.call(env)
   end
 
   private
