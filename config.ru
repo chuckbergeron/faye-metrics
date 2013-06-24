@@ -14,7 +14,7 @@ require 'thin'
 require 'sinatra'
 require 'pry'
 
-require File.expand_path('../app', __FILE__)
+require File.expand_path('../faye', __FILE__)
 require File.expand_path('../faye_metrics', __FILE__)
 require File.expand_path('../sinatra', __FILE__)
 
@@ -22,5 +22,6 @@ use FayeMetrics, { faye_rack_adapter: App }
 
 Faye::WebSocket.load_adapter('thin')
 
+# run Sinatra::Application
 run App
 
