@@ -2,24 +2,30 @@ class FayeMetrics
 
   attr_reader :faye_rack_adapter
 
-  def initialize(app, options)
-    @app = app
-    @faye_rack_adapter = options[:faye_rack_adapter]
-
+  def initialize(app, faye_rack_adapter)
+    @app   = app
     @stats = {
-      clients_connected: 0,
-      pid: store_memory_usage[0],
-      memory: store_memory_usage[1]
+      clients_connected: 0
     }
+    @faye_rack_adapter = faye_rack_adapter
 
     bind(:handshake)  { @stats[:clients_connected] += 1}
     bind(:disconnect) { @stats[:clients_connected] -= 1}
-
-    store_memory_usage
   end
 
+  # Right now, this fires for all HTTP calls (favicon.ico, application.css, etc.) :(
   def call(env)
     request = Rack::Request.new(env)
+    info = process_info
+
+    @stats.merge!({
+      pid:    info[0],
+      cpu:    info[1],
+      memory: formatted_memory(info[2]),
+      time:   formatted_time
+    })
+
+    info.each { |v| puts "#{v}" }
 
     env['stats'] = @stats
 
@@ -34,10 +40,29 @@ class FayeMetrics
       end
     end
 
-    # TODO: This is the current process memory (ie. thin), but we want the memory
-    # of the specific Faye Rack adapter
-    def store_memory_usage
-      pid, size = `ps ax -o pid,rss | grep -E "^[[:space:]]*#{$$}"`.strip.split.map(&:to_i)
+    # This is the current process & it's memory usage (ie. thin)
+    def process_info
+      `ps ax -o pid,%cpu,rss | grep -E "^[[:space:]]*#{$$}"`.strip.split
+    end
+
+    def formatted_memory(memory)
+      (memory.to_i / 1000)
+    end
+
+    # Only use the hours and minutes
+    def formatted_time
+      lstart = `ps ax -o pid,lstart | grep -E "^[[:space:]]*#{$$}"`
+
+      seconds = (Time.now - Time.parse(lstart)).to_i
+
+      binding.pry
+
+      minutes = seconds / 60
+      hours   = minutes / 60
+      days    = hours   / 24
+
+      formatted = elapsed_seconds
+      # "#{formatted[0]}h#{formatted[1]}m"
     end
 
 end

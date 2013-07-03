@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/stylesheets/application.css">
 
     <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
-    
+
     <!-- <link rel="icon" href="/assets/favicon.ico"> -->
 
   </head>
@@ -40,7 +40,14 @@
             <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
               <h1 class="title" data-bind="title">Memory Usage</h1>
 
-              <h2 class="value"><%= @stats[:memory] %></h2>
+              <h2 class="value"><%= @stats[:memory] %>MB</h2>
+            </div>
+          </li>
+          <li>
+            <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
+              <h1 class="title" data-bind="title">Time</h1>
+
+              <h2 class="value"><%= @stats[:time] %></h2>
             </div>
           </li>
         </ul>

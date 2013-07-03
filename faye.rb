@@ -1,4 +1,19 @@
-require 'faye'
+Faye::WebSocket.load_adapter('thin')
+
+# TODO: Using Redis
+#
+# require 'faye/redis'
+#
+# App = Faye::RackAdapter.new(Sinatra::Application,
+#   :mount   => '/bayeux',
+#   :timeout => 25,
+#   :engine  => {
+#     :type  => Faye::Redis,
+#     :host  => 'localhost',
+#     :port  => 6379
+#   }
+# )
+
 
 App = Faye::RackAdapter.new(Sinatra::Application,
   :mount   => '/bayeux',
@@ -16,4 +31,3 @@ end
 App.bind(:disconnect) do |client_id|
   puts "[ DISCONNECT] #{client_id}"
 end
-

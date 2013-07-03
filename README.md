@@ -3,6 +3,10 @@ faye-metrics
 
 A bit 'o' insight at just what your Faye server is up to.
 
+NOTE: Makes use of the `ps` & `grep` commands on *nix operating systems (ie. Windows untested / unsupported)
+
+ANOTHER NOTE: Developed against Ruby 2.0.0
+
 Installation
 ============
 
@@ -16,7 +20,7 @@ Start with:
 
 or
 
-    thin start -R examples/ruby/config.ru -p 9292
+    thin start -R config.ru -p 9292
 
 Credits
 ============
