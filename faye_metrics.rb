@@ -25,8 +25,6 @@ class FayeMetrics
       time:   formatted_time
     })
 
-    info.each { |v| puts "#{v}" }
-
     env['stats'] = @stats
 
     @app.call(env)
@@ -54,15 +52,11 @@ class FayeMetrics
       lstart = `ps ax -o pid,lstart | grep -E "^[[:space:]]*#{$$}"`
 
       seconds = (Time.now - Time.parse(lstart)).to_i
-
-      binding.pry
-
       minutes = seconds / 60
       hours   = minutes / 60
       days    = hours   / 24
 
-      formatted = elapsed_seconds
-      # "#{formatted[0]}h#{formatted[1]}m"
+      "#{days} days #{hours}h #{minutes}m #{seconds}s"
     end
 
 end

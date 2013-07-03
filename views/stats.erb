@@ -38,6 +38,13 @@
           </li>
           <li>
             <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
+              <h1 class="title" data-bind="title">CPU %</h1>
+
+              <h2 class="value"><%= @stats[:cpu] %></h2>
+            </div>
+          </li>
+          <li>
+            <div data-id="valuation" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$" class="widget widget-number valuation">
               <h1 class="title" data-bind="title">Memory Usage</h1>
 
               <h2 class="value"><%= @stats[:memory] %>MB</h2>
