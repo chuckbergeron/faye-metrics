@@ -28,3 +28,20 @@ Credits
 Thanks to [@kalv](http://twitter.com/kalv) ~~WIP: and Shopify for their Dashing framework~~.
 
 Started by Charles Bergeron [@CharlesEllery](http://twitter.com/CharlesEllery) & Kalvir Sandhu. Inspired by [Medeo](https://medeo.ca).
+
+
+
+# WIP:
+
+## Send your Faye process data to NewRelic
+
+### faye-metrics-newrelic-plugin install
+
+1. Download or clone the latest version from `https://github.com/chuckbergeron/faye-metrics-newrelic-plugin/tags`
+2. Extract to the location you want to run the agent from
+3. Copy `config/template_newrelic_plugin.yml` to `config/newrelic_plugin.yml`
+4. Edit `config/newrelic_plugin.yml` and replace "YOUR_LICENSE_KEY_HERE" with your New Relic license key
+<!-- 5. Create a plugin in New Relic -->
+5. run `./newrelic_example_agent`
+
+

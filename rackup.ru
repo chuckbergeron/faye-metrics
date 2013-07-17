@@ -1,6 +1,6 @@
 # This has been built against thin, and currently relies on a handful of gems:
 #
-#     gem install pry thin faye sinatra rack
+#     gem install pry thin faye sinatra rack newrelic_plugin
 #
 # Start with:
 #
@@ -12,10 +12,9 @@
 
 # TODO:
 # Add faye-redis & `brew install nginx` for multi-proc support
-#
-#     gem install pry thin faye sinatra rack
 
 require 'rubygems'
+# require 'bundler/setup'
 require 'faye'
 require 'thin'
 require 'sinatra'
@@ -26,7 +25,9 @@ require './faye_metrics'
 require './sinatra'
 
 # This is where we step in to bind various listeners and store stats
-use FayeMetrics, App
+# use FayeMetrics::Web, App
+# use FayeMetrics::Redis, App
+use FayeMetrics::NewRelic, App
 
 # run Sinatra::Application
 run App

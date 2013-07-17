@@ -1,3 +1,5 @@
+config/newrelic_plugin.yml
+
 *.gem
 *.rbc
 .bundle
