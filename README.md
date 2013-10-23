@@ -45,3 +45,45 @@ Started by Charles Bergeron [@CharlesEllery](http://twitter.com/CharlesEllery) &
 5. run `./newrelic_example_agent`
 
 
+# Warning:
+
+                                            ..
+                                         ,o""""o
+                                      ,o$"     o
+                                   ,o$$$                                 
+                                 ,o$$$'
+                               ,o$"o$'
+                             ,o$$"$"'   
+                          ,o$"$o"$"'    
+                       ,oo$"$"$"$"$$`                      ,oooo$$$$$$$$oooooo.  
+                    ,o$$$"$"$"$"$"$"o$`..             ,$o$"$$"$"'            `oo.o
+                 ,oo$$$o"$"$"$"$  $"$$$"$`o        ,o$$"o$$$o$'                 `o
+              ,o$"$"$o$"$"$"$  $"$$o$$o $$o`o   ,$$$$$o$"$$o'                    $
+            ,o"$$"'  `$"$o$" o$o$o"  $$$o$o$oo"$$$o$"$$"$o"'                     $
+         ,o$"'        `"$ "$$o$$" $"$o$o$$"$o$$o$o$o"$"$"`""o                   ' 
+       ,o$'          o$ `"$"$o "$o$$o$$$"$$$o"$o$$o"$$$    `$$  
+      ,o'           (     `" o$"$o"$o$$$"$o$"$"$o$"$$"$ooo|  `` 
+     $"$             `    (   `"o$$"$o$o$$ "o$o"   $o$o"$"$    )
+    (  `                   `    `o$"$$o$" "o$$     "o /|"$o"
+     `                           `$o$$$$"" o$      "o$\|"$o'
+                                  `$o"$"$ $ "       `"$"$o$
+                                   "$$"$$ "oo         ,$""$ 
+                                   $"$o$$""o"          ,o$"$
+                                   $$"$$"$ "o           `,",
+                         ,oo$oo$$$$$$"$o$$$ ""o           
+                      ,o$$"o"o$o$$o$$$"$o$$oo"oo
+                    ,$"oo"$$$$o$$$$"$$$o"o$o"o"$o o
+                   ,$$$""$$o$,      `$$$$"$$$o""$o $o               
+                   $o$o$"$,          `$o$"$o$o"$$o$ $$o             
+                  $$$o"o$$           ,$$$$o$$o"$"$$ $o$$oo      ,   
+                  "$o$$$ $`.        ,"$$o$"o$""$$$$ `"$o$$oo    `o
+                  `$o$o$"$o$o`.  ,.$$"$o$$"$$"o$$$$   `$o$$ooo    $$ooooooo
+                    `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o
+                       `$$"$"$o$$o$"$$"$ $$$  $ "           `$"$o            `o
+                          `$$"o$o"$o"$o$ "  o $$$o            `$$"o          ,$
+                             (" ""$"""     o"" "o$o             `$$ooo     ,o$$
+                                  $$"""o   (   "$o$$$"o            `$o$$$o$"$'
+                                    ) ) )           )  ) )            ` "'
+
+This was a work in progress / proof of concept that never hit a true release, and I've since moved on to other projects. Enjoy as you will!
+
